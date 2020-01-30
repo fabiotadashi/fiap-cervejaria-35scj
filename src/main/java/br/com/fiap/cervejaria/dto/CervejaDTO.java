@@ -32,6 +32,7 @@ public class CervejaDTO {
         this.dataLancamento = createCervejaDTO.getDataLancamento();
     }
 
+
     public Integer getId() {
         return id;
     }
