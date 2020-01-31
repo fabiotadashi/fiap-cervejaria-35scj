@@ -1,46 +1,44 @@
-package br.com.fiap.cervejaria.dto;
+package br.com.fiap.cervejaria.entity;
 
-import br.com.fiap.cervejaria.entity.Cerveja;
+import br.com.fiap.cervejaria.dto.CreateCervejaDTO;
+import br.com.fiap.cervejaria.dto.Tipo;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 
-public class CervejaDTO {
+@Entity
+@Table(name = "TB_CERVEJA")
+public class Cerveja {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column
     private String marca;
+
+    @Column
     private Double teorAlcoolico;
+
+    @Column
+    @Enumerated(EnumType.STRING)
     private Tipo tipo;
+
+    @Column
     private BigDecimal preco;
+
+    @Column
     private ZonedDateTime dataLancamento;
 
-    public CervejaDTO(){}
+    public Cerveja(){}
 
-    public CervejaDTO(Integer id, String marca, Double teorAlcoolico, Tipo tipo, BigDecimal preco, ZonedDateTime dataLancamento) {
-        this.id = id;
-        this.marca = marca;
-        this.teorAlcoolico = teorAlcoolico;
-        this.tipo = tipo;
-        this.preco = preco;
-        this.dataLancamento = dataLancamento;
-    }
-
-    public CervejaDTO(CreateCervejaDTO createCervejaDTO, Integer id) {
-        this.id = id;
+    public Cerveja(CreateCervejaDTO createCervejaDTO) {
         this.marca = createCervejaDTO.getMarca();
-        this.teorAlcoolico = createCervejaDTO.getTeorAlcoolico();
-        this.tipo = createCervejaDTO.getTipo();
         this.preco = createCervejaDTO.getPreco();
         this.dataLancamento = createCervejaDTO.getDataLancamento();
-    }
-
-    public CervejaDTO(Cerveja cerveja) {
-        this.id = cerveja.getId();
-        this.marca = cerveja.getMarca();
-        this.teorAlcoolico = cerveja.getTeorAlcoolico();
-        this.tipo = cerveja.getTipo();
-        this.preco = cerveja.getPreco();
-        this.dataLancamento = cerveja.getDataLancamento();
+        this.teorAlcoolico = createCervejaDTO.getTeorAlcoolico();
+        this.tipo = createCervejaDTO.getTipo();
     }
 
     public Integer getId() {

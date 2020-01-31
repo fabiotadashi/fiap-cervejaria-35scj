@@ -4,6 +4,8 @@ import br.com.fiap.cervejaria.dto.CervejaDTO;
 import br.com.fiap.cervejaria.dto.CreateCervejaDTO;
 import br.com.fiap.cervejaria.dto.PrecoCervejaDTO;
 import br.com.fiap.cervejaria.dto.Tipo;
+import br.com.fiap.cervejaria.entity.Cerveja;
+import br.com.fiap.cervejaria.repository.CervejaRepository;
 import br.com.fiap.cervejaria.service.CervejaService;
 import org.springframework.stereotype.Service;
 
@@ -18,40 +20,19 @@ import static br.com.fiap.cervejaria.dto.Tipo.*;
 @Service
 public class CervejaServiceImpl implements CervejaService {
 
-    private List<CervejaDTO> cervejaDTOList;
 
-    public CervejaServiceImpl() {
-        cervejaDTOList = new ArrayList<>();
+    private CervejaRepository cervejaRepository;
 
-        cervejaDTOList.add(new CervejaDTO(1,
-                "Marca 1",
-                4.5,
-                PILSEN,
-                BigDecimal.valueOf(12.9),
-                ZonedDateTime.now().minusYears(3)));
-
-        cervejaDTOList.add(new CervejaDTO(2,
-                "Marca 2",
-                3.5,
-                ALE,
-                BigDecimal.valueOf(10.9),
-                ZonedDateTime.now().minusYears(2)));
-
-        cervejaDTOList.add(new CervejaDTO(3,
-                "Marca 1",
-                7.5,
-                WEISS,
-                BigDecimal.valueOf(17.9),
-                ZonedDateTime.now().minusYears(1)));
-
+    public CervejaServiceImpl(CervejaRepository cervejaRepository){
+        this.cervejaRepository = cervejaRepository;
     }
 
     @Override
     public List<CervejaDTO> findAll(Tipo tipo) {
-        return cervejaDTOList.stream()
-                .filter(cervejaDTO -> tipo == null || cervejaDTO.getTipo().equals(tipo))
+        return cervejaRepository.findAll()
+                .stream()
+                .map(CervejaDTO::new)
                 .collect(Collectors.toList());
-
     }
 
     @Override
@@ -61,9 +42,11 @@ public class CervejaServiceImpl implements CervejaService {
 
     @Override
     public CervejaDTO create(CreateCervejaDTO createCervejaDTO) {
-        CervejaDTO cervejaDTO = new CervejaDTO(createCervejaDTO, cervejaDTOList.size() + 1);
-        cervejaDTOList.add(cervejaDTO);
-        return cervejaDTO;
+        Cerveja cerveja = new Cerveja(createCervejaDTO);
+
+        Cerveja savedCerveja = cervejaRepository.save(cerveja);
+
+        return new CervejaDTO(savedCerveja);
     }
 
     @Override
