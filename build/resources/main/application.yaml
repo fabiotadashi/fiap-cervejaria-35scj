@@ -8,5 +8,5 @@ spring:
     password: fiap
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
     show-sql: true
