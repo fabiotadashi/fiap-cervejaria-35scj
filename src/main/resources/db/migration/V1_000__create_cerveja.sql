@@ -5,7 +5,7 @@ CREATE TABLE TB_CERVEJA (
   tipo varchar(50) DEFAULT NULL,
   preco double DEFAULT NULL,
   data_lancamento timestamp DEFAULT NULL,
-  data_criacao timestamp DEFAULT NULL,
-  data_atualizacao timestamp DEFAULT NULL,
+  created_date timestamp DEFAULT NULL,
+  updated_date timestamp DEFAULT NULL,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
