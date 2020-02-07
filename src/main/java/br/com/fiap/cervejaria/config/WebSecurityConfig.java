@@ -22,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic()
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "*/cervejas").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/cervejas").hasRole("ADMIN")
                 .and()
                 .csrf().disable()
                 .formLogin().disable();
