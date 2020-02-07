@@ -25,6 +25,10 @@ dependencies {
 	implementation 'com.h2database:h2:1.4.197'
 	implementation 'org.flywaydb:flyway-maven-plugin:4.0.3'
 
+	// Spring Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
