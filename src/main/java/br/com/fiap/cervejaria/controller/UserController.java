@@ -1,6 +1,8 @@
 package br.com.fiap.cervejaria.controller;
 
+import br.com.fiap.cervejaria.dto.AuthDTO;
 import br.com.fiap.cervejaria.dto.CreateUserDTO;
+import br.com.fiap.cervejaria.dto.JwtDTO;
 import br.com.fiap.cervejaria.dto.UserDTO;
 import br.com.fiap.cervejaria.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +23,11 @@ public class UserController {
     @PostMapping
     public UserDTO create(@RequestBody CreateUserDTO createUserDTO){
         return userService.create(createUserDTO);
+    }
+
+    @PostMapping("/login")
+    public JwtDTO login(@RequestBody AuthDTO authDTO){
+        return userService.login(authDTO);
     }
 
 }
