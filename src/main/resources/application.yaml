@@ -15,3 +15,7 @@ spring:
       name: admin
       password: fiap
       roles: ADMIN
+
+jwt:
+  secret: F14ps3cr3t
+  expiration: 1
