@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a65130e-1dac-43ff-ab48-0175a070c226" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/cervejaria/security/JwtAuthenticationEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/cervejaria/security/JwtRequestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/cervejaria/security/JwtUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/cervejaria/security/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/cervejaria/security/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/cervejaria/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/cervejaria/repository/UserRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,17 +147,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:fiapcervejaria" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:fiapcervejaria" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@6b1c76ab" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -175,26 +168,42 @@
       <workItem from="1580434004999" duration="2114000" />
       <workItem from="1580784767659" duration="62000" />
       <workItem from="1581026720789" duration="13306000" />
-      <workItem from="1581766665881" duration="2905000" />
+      <workItem from="1581766665881" duration="4552000" />
     </task>
+    <task id="LOCAL-00001" summary="token util">
+      <created>1581770077305</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581770077305</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="token util" />
+    <option name="LAST_COMMIT_MESSAGE" value="token util" />
   </component>
   <component name="WindowStateProjectService">
     <state x="308" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580434209600">
       <screen x="0" y="23" width="1280" height="697" />
     </state>
     <state x="308" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.697@0.23.1280.697" timestamp="1580434209600" />
-    <state x="453" y="88" key="#com.intellij.ide.util.MemberChooser" timestamp="1581039583810">
+    <state x="453" y="88" key="#com.intellij.ide.util.MemberChooser" timestamp="1581771592613">
       <screen x="0" y="23" width="1280" height="697" />
     </state>
-    <state x="453" y="88" key="#com.intellij.ide.util.MemberChooser/0.23.1280.697@0.23.1280.697" timestamp="1581039583810" />
+    <state x="453" y="88" key="#com.intellij.ide.util.MemberChooser/0.23.1280.697@0.23.1280.697" timestamp="1581771592613" />
     <state x="150" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581029619466">
       <screen x="0" y="23" width="1280" height="697" />
     </state>
     <state x="150" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1280.697@0.23.1280.697" timestamp="1581029619466" />
+    <state x="225" y="23" key="CommitChangelistDialog2" timestamp="1581770077159">
+      <screen x="0" y="23" width="1280" height="697" />
+    </state>
+    <state x="225" y="23" key="CommitChangelistDialog2/0.23.1280.697@0.23.1280.697" timestamp="1581770077159" />
     <state x="128" y="82" key="DiffContextDialog" timestamp="1581040365890">
       <screen x="0" y="23" width="1280" height="697" />
     </state>
@@ -267,9 +276,9 @@
       <screen x="0" y="23" width="1280" height="697" />
     </state>
     <state x="378" y="131" width="524" height="484" key="extract.method.dialog/0.23.1280.697@0.23.1280.697" timestamp="1581768949586" />
-    <state x="305" y="44" width="670" height="676" key="search.everywhere.popup" timestamp="1581768257757">
+    <state x="305" y="44" width="670" height="676" key="search.everywhere.popup" timestamp="1581770814357">
       <screen x="0" y="23" width="1280" height="697" />
     </state>
-    <state x="305" y="44" width="670" height="676" key="search.everywhere.popup/0.23.1280.697@0.23.1280.697" timestamp="1581768257757" />
+    <state x="305" y="44" width="670" height="676" key="search.everywhere.popup/0.23.1280.697@0.23.1280.697" timestamp="1581770814357" />
   </component>
 </project>
